@@ -50,8 +50,17 @@
       h1,h2,h3,h4,h5,h6,.button,.main-nav ul li a,.font-face--oak-bold { font-family: "Raleway", sans-serif !important; }
       .font-face--plantin-light,.section-gems .column--l--4of12 h3 { font-family: "Lora", Georgia, serif !important; font-weight: 300; }
 
-      /* Fix portada image on mobile: remove absolute positioning so it flows in the document */
+      /* Mobile fixes */
       @media (max-width: 767px) {
+        /* Ensure section-hero takes full viewport height on mobile */
+        .site-main {
+          min-height: 100vh !important;
+        }
+        .section-hero {
+          height: 100vh !important;
+          min-height: 100vh !important;
+        }
+        /* Fix portada image: remove absolute positioning so it flows in the document */
         .gem-image--mobile {
           position: relative !important;
           left: auto !important;
