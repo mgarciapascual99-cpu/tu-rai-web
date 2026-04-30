@@ -50,6 +50,9 @@
       h1,h2,h3,h4,h5,h6,.button,.main-nav ul li a,.font-face--oak-bold { font-family: "Raleway", sans-serif !important; }
       .font-face--plantin-light,.section-gems .column--l--4of12 h3 { font-family: "Lora", Georgia, serif !important; font-weight: 300; }
 
+      /* portada mobile hero: hidden on desktop */
+      .portada-mobile-hero { display: none; }
+
       /* Mobile fixes */
       @media (max-width: 767px) {
         /* Ensure section-hero takes full viewport height on mobile */
@@ -60,17 +63,16 @@
           height: 100vh !important;
           min-height: 100vh !important;
         }
-        /* Fix portada image: remove absolute positioning so it flows in the document */
+        /* Show portada right below the logo on mobile */
+        .portada-mobile-hero {
+          display: block;
+          width: 100%;
+          max-width: 100%;
+          margin: 0;
+        }
+        /* Hide the original gem-image on mobile (now shown above) */
         .gem-image--mobile {
-          position: relative !important;
-          left: auto !important;
-          top: auto !important;
-          transform: none !important;
-          display: block !important;
-          width: 90% !important;
-          max-width: 400px !important;
-          margin: 32px auto 0 !important;
-          z-index: auto !important;
+          display: none !important;
         }
         .gem-image--desktop {
           display: none !important;
@@ -286,7 +288,9 @@
 
 				<section class="section-hero">
 	<img class="logo" width="343" height="89" src="assets/img/tu_rai_fusteria.svg" alt="">
-</section>				<section class="section section-gems" id="gems" style="scroll-margin-top:80px;">
+</section>
+<img src="assets/img/imagen-portada-mobil.png" alt="" class="portada-mobile-hero">
+				<section class="section section-gems" id="gems" style="scroll-margin-top:80px;">
 
 	<div class="section__headline">
 		<div class="gems--animated">
