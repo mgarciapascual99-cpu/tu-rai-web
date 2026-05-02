@@ -5,11 +5,11 @@
 <!--[if IE 9 ]><html class="ie9 no-js"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]--><html>
 	<head>
-		<title>TU RAI - Creative Technolgist & User Experience Engineer Roland Lösslein</title>
+		<title>TU RAI FUSTERIA - Diseño y montaje a medida</title>
 
 		<!-- META DATA -->
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
-		<meta name="description" content="Hello, I’m Roland, Creative Technologist & User Experience Designer based in Berlin – I create digital products with knowledge and passion."/>
+		<meta name="description" content="Tu Rai Fusteria: Especialistas en trabajos a medida, cocinas y montajes premium."/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0"/>
 
 		<link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicons/apple-icon-57x57.png">
@@ -30,9 +30,9 @@
 		<meta name="msapplication-TileImage" content="/assets/img/favicons/ms-icon-144x144.png">
 		<meta name="theme-color" content="#ffffff">
 
-		<meta property="og:site_name " content="TU RAI" />
-		<meta property="og:title" content="TU RAI - Creative Technolgist & User Experience Designer Roland Lösslein" />
-		<meta property="og:description" content="Hello, I’m Roland, Creative Technologist & User Experience Designer based in Berlin – I create digital products with knowledge and passion." />
+		<meta property="og:site_name" content="TU RAI FUSTERIA" />
+		<meta property="og:title" content="TU RAI FUSTERIA - Diseño y montaje a medida" />
+		<meta property="og:description" content="Especialistas en trabajos a medida, cocinas y montajes premium." />
 		<meta property="og:image" content="http://weaintplastic.com/assets/img/sharing.png" />
 
 		<!-- CSS -->
@@ -59,6 +59,15 @@
         .section-hero {
           height: 100vh !important;
           min-height: 100vh !important;
+        }
+        /* Estado inicial: abajo para que no se vea en la intro */
+        .section-gems .gem-image--mobile {
+          transform: translate(-50%, 30%) !important;
+        }
+        /* Estado final: al -90% cuando la web carga */
+        body.loaded .section-gems .gem-image--mobile {
+          transform: translate(-50%, -90%) !important;
+          transition: transform 1.4s cubic-bezier(.77,0,.175,1) 0.1s !important;
         }
       }
     </style>
