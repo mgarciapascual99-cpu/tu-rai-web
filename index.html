@@ -1384,5 +1384,35 @@
 
 		<script type="text/javascript" src="assets/js/vendor.min.js"></script>
 		<script type="text/javascript" src="assets/js/scripts.min.js"></script>
+
+		<style>
+			.work--animated img,
+			.letters--animated img,
+			.contact--animated img {
+				opacity: 0;
+				transform: translateY(24px);
+				transition: opacity 0.6s cubic-bezier(.77,0,.175,1), transform 0.6s cubic-bezier(.77,0,.175,1);
+			}
+			.work--animated.h2-visible img,
+			.letters--animated.h2-visible img,
+			.contact--animated.h2-visible img {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		</style>
+		<script>
+			(function () {
+				var targets = document.querySelectorAll('.work--animated, .letters--animated, .contact--animated');
+				var observer = new IntersectionObserver(function (entries) {
+					entries.forEach(function (entry) {
+						if (entry.isIntersecting) {
+							entry.target.classList.add('h2-visible');
+							observer.unobserve(entry.target);
+						}
+					});
+				}, { threshold: 0.3 });
+				targets.forEach(function (el) { observer.observe(el); });
+			})();
+		</script>
 	</body>
 </html>
